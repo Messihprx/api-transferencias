@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+.env
+Oque-o-professor-quer.md
