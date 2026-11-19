@@ -161,6 +161,7 @@ def transferir(dados: TransferenciaIn, username: str = Depends(usuario_logado)):
             .where(Usuario.id.in_([origem.id, destino.id]))
             .order_by(Usuario.id)
             .with_for_update()
+            .execution_options(populate_existing=True)
         ).all()
         pelo_id = {conta.id: conta for conta in travadas}
         origem = pelo_id[origem.id]
